@@ -2,6 +2,14 @@
 
 A new Flutter project.
 
+
+## 📸 ScreenShots
+
+| Image| Image|
+|------|-------|
+|<img src="ss/1.png" width="400">|<img src="ss/2.png" width="400">|
+|<img src="ss/3.png" width="400">|<img src="ss/4.png" width="400">|
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
