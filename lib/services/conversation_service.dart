@@ -26,7 +26,7 @@ class ConversationService {
   }
 
   Future<List<Messages>> fetchMessages(String id) async {
-    await Future.delayed(const Duration(seconds: 2));
+    // await Future.delayed(const Duration(seconds: 2));
     if (id == "9991") {
       return List<Messages>.from(firstJson.map((e) => Messages.fromJson(e)));
     }
@@ -39,16 +39,16 @@ class ConversationService {
   Future<void> sendMessage(Messages message, String convoId) async {
     if (convoId == "9991") {
       firstJson.add(message.toJson());
-      receiveMessage(convoId);
+      await receiveMessage(convoId);
       return;
     }
     if (convoId == "9992") {
       secondJson.add(message.toJson());
-      receiveMessage(convoId);
+      await receiveMessage(convoId);
       return;
     }
     thirdJson.add(message.toJson());
-    receiveMessage(convoId);
+    await receiveMessage(convoId);
     return;
   }
 

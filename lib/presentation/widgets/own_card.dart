@@ -16,7 +16,7 @@ class OwnMessageCard extends StatelessWidget {
       alignment: Alignment.centerRight,
       child: ConstrainedBox(
         constraints: BoxConstraints(
-          maxWidth: MediaQuery.of(context).size.width - 45,
+          maxWidth: MediaQuery.of(context).size.width - 160,
         ),
         child: Card(
           elevation: 1,
@@ -34,31 +34,38 @@ class OwnMessageCard extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.only(
-                  left: 50,
+                  left: 30,
                   right: 10,
                   top: 5,
-                  bottom: 30,
+                  bottom: 0,
                 ),
-                child: Wrap(
-                  direction: Axis.vertical,
-                  alignment: WrapAlignment.end,
-                  // mainAxisAlignment: MainAxisAlignment.end,
-                  // crossAxisAlignment: CrossAxisAlignment.end,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(data.message ?? ""),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(DateFormat('HH:mm').format(data.modifiedAt!)),
+                        const Icon(Icons.check),
+                      ],
+                    )
                   ],
                 ),
               ),
-              Positioned(
-                bottom: 4,
-                right: 0,
-                child: Row(
-                  children: [
-                    Text(DateFormat('HH:mm').format(data.modifiedAt!)),
-                    const Icon(Icons.check),
-                  ],
-                ),
-              ),
+              // Positioned(
+              //   bottom: 4,
+              //   right: 0,
+              //   child: Row(
+              //     children: [
+              //       Text(DateFormat('HH:mm').format(data.modifiedAt!)),
+              //       const Icon(Icons.check),
+              //     ],
+              //   ),
+              // ),
             ],
           ),
         ),

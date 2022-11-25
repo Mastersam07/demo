@@ -1,7 +1,7 @@
 import 'package:idnet/models/indox.dart';
 
 import '../services/conversation_service.dart';
-import 'base_vm.dart';
+import '../core/base_vm.dart';
 
 class ConversationViewModel extends AppViewModel {
   final ConversationService service;
